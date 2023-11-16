@@ -7,15 +7,19 @@ import 'package:source_gen/source_gen.dart';
 
 import '../default_container.dart';
 
-final bigIntString = ToFromStringHelper('BigInt.parse', 'toString()', 'BigInt');
+final bigIntString = ToFromStringHelper(
+  'BigInt.tryParse',
+  'toString()',
+  'BigInt',
+);
 
 final dateTimeString = ToFromStringHelper(
-  'DateTime.parse',
+  'DateTime.tryParse',
   'toIso8601String()',
   'DateTime',
 );
 
-final uriString = ToFromStringHelper('Uri.parse', 'toString()', 'Uri');
+final uriString = ToFromStringHelper('Uri.tryParse', 'toString()', 'Uri');
 
 /// Package-internal helper that unifies implementations of [Type]s that convert
 /// trivially to-from [String].
@@ -62,7 +66,7 @@ class ToFromStringHelper {
       return null;
     }
 
-    final parseParam = isString ? expression : '$expression as String';
+    final parseParam = isString ? expression : '$expression.toString()';
 
     final output = '$_parse($parseParam)';
 
