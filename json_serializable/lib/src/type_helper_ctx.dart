@@ -71,6 +71,7 @@ class TypeHelperCtx
     return DefaultContainer.deserialize(
       value,
       nullable: targetType.isNullableType,
+      targetType: targetType,
       defaultValue: defaultValue,
     );
   }

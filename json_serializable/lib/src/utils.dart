@@ -193,6 +193,9 @@ extension DartTypeExtension on DartType {
 String ifNullOrElse(String test, String ifNull, String ifNotNull) =>
     '$test == null ? $ifNull : $ifNotNull';
 
+String checkIsMapAndNull(String test, String ifNull, String ifNotNull) =>
+    '$test == null || $test is! Map ? $ifNull : $ifNotNull';
+
 String encodedFieldName(FieldRename fieldRename, String declaredName) =>
     switch (fieldRename) {
       FieldRename.none => declaredName,
