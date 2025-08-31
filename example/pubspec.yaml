@@ -7,8 +7,8 @@ environment:
 resolution: workspace
 
 dependencies:
-  json_annotation: ^4.9.0
-
+  json_annotation:
+    path: ../json_annotation
 dev_dependencies:
   # Used by tests. Not required to use `json_serializable`.
   _json_serial_shared_test:
@@ -28,11 +28,3 @@ dev_dependencies:
   # Not required to use `json_serializable`.
   path: ^1.9.0
   test: ^1.25.9
-
-# This section is used to verify changes to these packages. Do not include in
-# your code!
-dependency_overrides:
-  flexible_json_serializable:
-    path: ../json_serializable
-  json_annotation:
-    path: ../json_annotation
