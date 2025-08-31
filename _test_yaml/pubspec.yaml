@@ -9,7 +9,7 @@ resolution: workspace
 dev_dependencies:
   _json_serial_shared_test:
     path: ../shared_test
-  build_runner: ^2.6.0
+  build_runner: ^2.4.6
   build_verify: ^3.0.0
   checked_yaml: ^2.0.4
   json_annotation: ^4.9.0
